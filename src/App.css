@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Comfortaa:wght@600;700&family=Quicksand:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*, *::before, *::after {
+	box-sizing: border-box;
+  }
+  
+  * {
+	margin: 0;
+  }
+ 
+  body {
+	line-height: 1.5;
+  background-color: black;
+	-webkit-font-smoothing: antialiased;
+  }
+  
+  img, picture, video, svg {
+	display: block;
+	max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+	font: inherit;
+  }
+  
+  p, h1, h2, h3, h4, h5, h6 {
+	overflow-wrap: break-word;
+  }
+ 
+  #root, #__next {
+	isolation: isolate;
+  }
+.landing-card{
+  background: linear-gradient(112deg, rgba(0, 0, 0, 0.1) 6.31%, rgba(255, 255, 255, 0.00) 98.51%);
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+}
+h1 {
+
+  font-family: 'Bungee Outline', sans-serif;
+
+}
+h2 , h3 , h4 , button , input , legend {
+  font-family: 'Comfortaa', sans-serif;
+}
+p , li {
+  font-family: 'Quicksand', sans-serif;
+}
+li {
+  font-weight: normal;
+}
+legend {
+  font-weight : bold;
+}
+input {
+  background-color : transparent;
+}
+
+.add-bg-2{
+  background:  radial-gradient(at bottom   ,  hsla(0, 75%, 56%, 0.971)  ,  #141326 , #141326);
+}
+.c-card,.bg-add-gradient-3 {
+  background: linear-gradient(112deg, rgba(0, 0, 0, 0.1) 6.31%, rgba(255, 255, 255, 0.00) 98.51%);
+
+  box-shadow: inset 0px 4px 4px 0px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+}
+.add-bg-radial-2{
+  background:  radial-gradient(at top   ,  hsla(0, 75%, 56%, 0.971)  ,  #141326 , #141326);
+}
+.add-bg-radial  {
+
+  background:  radial-gradient(at bottom   ,  hsla(0, 75%, 56%, 0.971)  ,  #141326 , #141326);
+ 
+}
+.add-bg-linear-2{
+  background: linear-gradient(112deg, #141326 , #141326);
+  box-shadow: 0px 2px 2px white;
+}
+.add-linear-bg-3 , .bg-add-linear-2 , .button-bg-add , .rgb-add , .bg-add-grad{
+  background: linear-gradient(112deg, #E3823C , #E33C3C);
+}
+.add-bg {
+  background: linear-gradient(112deg, #E3823C , #E33C3C);
+  padding : 0.5rem 0.7rem 0.5rem 0.7rem;
+  border-radius: 0.2rem;
+}
+.bg-transparent {
+  background: linear-gradient(180deg, rgba(20, 19, 38, 0.00) -72.92%, #141326 70.83%);
+backdrop-filter: blur(7.5px);
+}
+.active{
+  color: #E3B53C;
+}
+button:disabled {
+   opacity: 0.4;
+   color : green;
+}
+
+@media (max-width: 700px) {
+  .add-bg-radial,.add-bg-2{
+
+    background:  radial-gradient(at bottom left   ,  hsla(0, 75%, 56%, 0.971)  ,  #141326 , #141326);
+   
+  }
+ 
+}
+::-webkit-scrollbar {
+    
+  width: 0;
+  height: 0;
+}
