@@ -1,15 +1,15 @@
 import Axios from "axios";
 const fetchExpenseList = () => {
-    return Axios.get("http://localhost:3000/api/expenses/expenses");
+    return Axios.get("https://expensetracker-api.onrender/expenses");
 };
 
 const fetchReminderList = () => {
-    return Axios.get("http://localhost:3000/api/reminders");
+    return Axios.get("https://expensetracker-api.onrender/api/reminders");
 };
 
 const fetchIncome = () => {
 
-     return Axios.get("http://localhost:3000/api/incomes")
+     return Axios.get("https://expensetracker-api.onrender/api/incomes")
 }
 
 

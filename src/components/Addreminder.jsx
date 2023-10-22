@@ -11,7 +11,7 @@ import Sucessmess from './Sucessmess'
 const Addreminder = () => {
   const [showSuccessText , setShowSuccessText] = ToggleState()
   const onSubmit = async(values , {resetForm} ) => {
-    const response = await axios.post('http://localhost:3000/api/reminders/createReminder' , values);
+    const response = await axios.post('https://expensetracker-api.onrender/api/reminders/createReminder' , values);
     setShowSuccessText(true)
     setTimeout(() => {
       resetForm();

@@ -10,7 +10,7 @@ const Addexpense = () => {
   const [sucessExpense , setSucessExpense] = ToggleState()
 
   const onSubmit = async(values , {resetForm}) => {
-     const response = await axios.post('http://localhost:3000/api/expenses/createExpense' , values)
+     const response = await axios.post('https://expensetracker-api.onrender/api/expenses/createExpense' , values)
      setSucessExpense(true)
      setTimeout(() => {
        resetForm()
