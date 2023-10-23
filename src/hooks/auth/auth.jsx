@@ -1,20 +1,21 @@
 import React, { useState, createContext, useContext, useMemo } from "react";
-import {  redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import ToggleState from "../ToggleState";
+
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
- 
   const [username, setUsername] = useState();
-  const [isLogin , setLogin] = ToggleState()
+  const [isLogin, setLogin] = ToggleState();
+  const history = useHistory();
 
   const login = (username) => {
     setUsername(username);
-    setLogin(true)
+    setLogin(true);
     setTimeout(() => {
-      setLogin(false)
+      setLogin(false);
+      history.push("/");
     }, 3000);
-    redirect("/");
   };
 
   const logout = () => {
@@ -28,7 +29,7 @@ export const AuthProvider = ({ children }) => {
       login,
       logout,
     }),
-    [username]
+    [username, isLogin]
   );
 
   return (
