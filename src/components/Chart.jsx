@@ -10,8 +10,8 @@ const Chart = (props) => {
   return (
     <>
       <section
-        className="chart-section lg:w-[24em] c-card   p-5 md:rounded-2xl row-span-1 lg:row-span-2 self-start h-full  fixed top-0 left-0 right-0 z-20 bottom-0  md:static "
-        style={{visibility : isOpen ? "visible" : "hidden"}}
+        className={ `chart-section lg:w-[24em] c-card   p-5 md:rounded-2xl row-span-1 lg:row-span-2 self-start h-full  fixed top-0 left-0 right-0 z-20 bottom-0  md:static ${isOpen ? 'block' : 'hidden'} md:block` }
+     
       >
         <div className='h-full'> 
           <div className="border-b-2 border-custom-yellow pb-2">
