@@ -10,7 +10,7 @@ import { HiMiniHomeModern } from "react-icons/hi2";
 import { FaMoneyBill } from "react-icons/fa";
 import { useState } from "react";
 import Chart from "../components/Chart";
-import { useAuth } from "../hooks/auth/auth";
+import { useAuth , isLogin} from "../hooks/auth/auth";
 import ToggleState  from "../hooks/ToggleState"
 import {
   useExpenses,
@@ -143,6 +143,9 @@ const Home = () => {
 
   return (
     <div className="min-h-screen  text-white mb-[5rem]">
+      <div className={`fixed right-16 bg-custom-navy p-5 rounded-md m-5 bottom-0 z-30 animate__animated animate__slideInUp ${isLogin ? 'block' : 'hidden' } `}>
+        <h2 className="text-white">Login Sucessfully</h2>
+      </div>
       <main className="flex flex-col gap-4 md:w-[75%] lg:w-[90%] m-auto">
         <section className="mt-5 p-5 md:p-0">
           <div className="flex flex-row justify-between md:w-4/5 md:m-auto">
