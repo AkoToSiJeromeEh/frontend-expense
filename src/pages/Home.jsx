@@ -10,7 +10,7 @@ import { HiMiniHomeModern } from "react-icons/hi2";
 import { FaMoneyBill } from "react-icons/fa";
 import { useState } from "react";
 import Chart from "../components/Chart";
-import { useAuth , isLogin} from "../hooks/auth/auth";
+import { useAuth } from "../hooks/auth/auth";
 import ToggleState  from "../hooks/ToggleState"
 import {
   useExpenses,
@@ -20,7 +20,7 @@ import {
 } from "../functions";
 const Home = () => {
 
-  const {username , logout} = useAuth()
+  const {username , logout , isLogin} = useAuth()
   const { expensesData } = useExpenses();
   const incomeData = useIncome();
   const [isOpen , setOpen] = ToggleState()
