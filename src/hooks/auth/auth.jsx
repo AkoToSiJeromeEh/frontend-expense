@@ -10,9 +10,9 @@ export const AuthProvider = ({ children }) => {
 
   const login = (username) => {
     setUsername(username);
-    setLogin(false)
+    setLogin(true)
     setTimeout(() => {
-      setLogin(true)
+      setLogin(false)
     }, 3000);
     redirect("/");
   };
