@@ -14,7 +14,7 @@ const Signup = () => {
   const onSubmit = async (values, { resetForm }) => {
     try {
       const response = await axios.post(
-        "https://expensetracker-api.onrender/api/users/register",
+        "https://expensetracker-api-yy05.onrender.com/api/users/register",
         values
       );
       setTimeout(() => {
