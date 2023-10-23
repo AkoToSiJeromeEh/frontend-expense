@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext, useMemo } from "react";
-import { useHistory } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import ToggleState from "../ToggleState";
 
 const AuthContext = createContext();
@@ -7,14 +7,14 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [username, setUsername] = useState();
   const [isLogin, setLogin] = ToggleState();
-  const history = useHistory();
+
 
   const login = (username) => {
     setUsername(username);
     setLogin(true);
     setTimeout(() => {
       setLogin(false);
-      history.push("/");
+      redirect("/home");
     }, 3000);
   };
 
