@@ -4,7 +4,7 @@ const Sucessmess = (props) => {
 
 	const {success , sucessMessage , } = props;
   return (
-	<p className="text-white font-semibold text-lg fixed bottom-0 right-40 p-8 z-20 bg-green-500  rounded-b-full w-fit text-center animate__animated   animate__swing ">
+	<p className="text-white font-semibold text-lg fixed bottom-1 right-40 p-8 z-20 bg-green-500  rounded-md w-fit text-center animate__animated   animate__swing ">
 	{success ? `${sucessMessage}` : null}
   </p>
   )
