@@ -14,7 +14,7 @@ const UpdateReminder = () => {
 
   const onSubmit = async (values, { resetForm }) => {
     const response = await Axios.patch(
-      `https://expensetracker-api-yy05.onrender.com/api/reminders/updateReminder/${params.id}`,
+      `https://expensetracker-api.onrender/api/reminders/updateReminder/${params.id}`,
       values
     );
     setShowSucess(false);

@@ -3,15 +3,15 @@ import { Bar } from 'react-chartjs-2'
 import PropTypes from 'prop-types';
 const Chart = (props) => {
   
-  const  {ChartData , ChartOption} = props
+  const  {ChartData , ChartOption , isOpen} = props
 
   ChartJS.defaults.color = 'white';
   ChartJS.defaults.font.size = 15;
   return (
     <>
       <section
-        className="chart-section lg:w-[24em] c-card   p-5 rounded-2xl row-span-1 lg:row-span-2 self-start h-full  absolute top-0 md:static hidden md:block"
-        id="chart-section-hidden text-white w-full"
+        className="chart-section lg:w-[24em] c-card   p-5 md:rounded-2xl row-span-1 lg:row-span-2 self-start h-full  fixed top-0 left-0 right-0 z-20 bottom-0  md:static "
+        style={{visibility : isOpen ? "visible" : "hidden"}}
       >
         <div className='h-full'> 
           <div className="border-b-2 border-custom-yellow pb-2">
@@ -33,5 +33,6 @@ export default Chart;
 Chart.propTypes = {
   ChartData: PropTypes.object.isRequired,
   ChartOption: PropTypes.object.isRequired,
+  isOpen : PropTypes.bool
 
 }

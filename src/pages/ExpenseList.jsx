@@ -31,7 +31,7 @@ const ExpenseList = () => {
 
   const deleteReminderList = async (id) => {
     await Axios.delete(
-      `https://expensetracker-api-yy05.onrender.com/api/reminders/deleteReminder/${id}`
+      `https://expensetracker-api.onrender/api/reminders/deleteReminder/${id}`
     );
     setReminderDelete(true);
     setTimeout(() => {
@@ -42,7 +42,7 @@ const ExpenseList = () => {
 
   const deleteExpenseList = async (id) => {
     await Axios.delete(
-      `https://expensetracker-api-yy05.onrender.com/api/expenses/deleteExpense/${id}`
+      `https://expensetracker-api.onrender/api/expenses/deleteExpense/${id}`
     );
     setExpenseDelete(true);
     refetchExpenses();

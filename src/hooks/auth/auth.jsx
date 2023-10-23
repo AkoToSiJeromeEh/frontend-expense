@@ -1,13 +1,16 @@
 import React, { useState, createContext, useContext, useMemo } from "react";
+import {  redirect } from "react-router-dom";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
  
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState('Jerome');
+ 
 
   const login = (username) => {
     setUsername(username);
+    redirect("/");
   };
 
   const logout = () => {

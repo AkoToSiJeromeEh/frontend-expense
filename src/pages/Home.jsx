@@ -1,5 +1,5 @@
 import cardImage from "../images/Rectangle 2.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { FaHamburger } from "react-icons/fa";
@@ -11,6 +11,7 @@ import { FaMoneyBill } from "react-icons/fa";
 import { useState } from "react";
 import Chart from "../components/Chart";
 import { useAuth } from "../hooks/auth/auth";
+import ToggleState  from "../hooks/ToggleState"
 import {
   useExpenses,
   useIncome,
@@ -22,18 +23,13 @@ const Home = () => {
   const {username , logout} = useAuth()
   const { expensesData } = useExpenses();
   const incomeData = useIncome();
+  const [isOpen , setOpen] = ToggleState()
 
-
-  const navigate = useNavigate();
 
   let totalExpense = totalExpenses(expensesData);
   let totalIncomes = totalIncome(incomeData);
   const totalBal = totalIncomes - totalExpense;
 
-  const Logout = () => {
-    auth.logout();
-    navigate("/");
-  };
 
   const expenseDatas = expensesData?.data.map((expense) => {
     return (
@@ -211,7 +207,7 @@ const Home = () => {
             </div>
           </section>
 
-          <Chart ChartData={userData} ChartOption={options} />
+          <Chart ChartData={userData} ChartOption={options} isOpen={isOpen} />
 
           <section className="transaction-section  min-h-[40vh] overflow-y-auto lg:row-start-2  lg:col-span-3  row-start-2 col-span-1 c-card   rounded-2xl w-full lg:w-[80%] p-5">
             <div className="flex flex-row justify-between mb-3 md:mb-5  md:m-auto w-full ">
@@ -238,7 +234,7 @@ const Home = () => {
       </main>
       <div className="fixed bottom-0 bg-black p-3 left-0 right-0 text-center text-custom-yellow block md:hidden z-50">
         <i className="fa-regular fa-chart-bar"></i>
-        <button id="chart-btn-toggler">Open Expense Chart</button>
+        <button id="chart-btn-toggler" onClick={() => setOpen(preval => !preval)}> {isOpen ? 'Close' : 'Open'} Expense Chart</button>
       </div>
     </div>
   );

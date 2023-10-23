@@ -1,15 +1,15 @@
 import Axios from "axios";
 const fetchExpenseList = () => {
-    return Axios.get("https://expensetracker-api-yy05.onrender.com/api/expenses/expenses");
+    return Axios.get("https://expensetracker-api.onrender/expenses");
 };
 
 const fetchReminderList = () => {
-    return Axios.get("https://expensetracker-api-yy05.onrender.com/api/reminders");
+    return Axios.get("https://expensetracker-api.onrender/api/reminders");
 };
 
 const fetchIncome = () => {
 
-     return Axios.get("https://expensetracker-api-yy05.onrender.com/api/incomes")
+     return Axios.get("https://expensetracker-api.onrender/api/incomes")
 }
 
 
