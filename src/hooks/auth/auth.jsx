@@ -5,7 +5,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
  
-  const [username, setUsername] = useState('Jerome');
+  const [username, setUsername] = useState();
   const [isLogin , setLogin] = ToggleState(false)
 
   const login = (username) => {
