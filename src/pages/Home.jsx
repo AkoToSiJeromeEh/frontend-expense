@@ -39,15 +39,15 @@ const Home = () => {
       >
         <div>
           <div className="rgb-add rounded-full p-3 w-12 inline-block align-middle">
-            {expense.category == "Food" ? (
+            {expense.category == " Food" ? (
               <FaHamburger className="w-10 text-2xl" />
-            ) : expense.category == "Travel" ? (
+            ) : expense.category == " Travel" ? (
               <PiAirplaneTiltFill className="w-10 text-2xl" />
-            ) : expense.category == "School" ? (
+            ) : expense.category == " School" ? (
               <FaSchool className="w-10 text-2xl" />
-            ) : expense.category == "Home" ? (
+            ) : expense.category == " Home" ? (
               <HiMiniHomeModern className="w-10 text-2xl" />
-            ) : expense.category == "Bills" ? (
+            ) : expense.category == " Bills" ? (
               <FaMoneyBill className="w-10 text-2xl" />
             ) : expense.category == " Entertainment" ? (
               <BiSolidCameraMovie className="w-10 text-2xl" />
