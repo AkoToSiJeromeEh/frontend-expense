@@ -1,4 +1,5 @@
-import { AiFillLock } from "react-icons/ai";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { GiAllSeeingEye } from "react-icons/gi";
 import { FaUserLarge } from "react-icons/fa6";
 import { signupSchema } from "../schemas";
 import { useFormik } from "formik";
@@ -7,9 +8,12 @@ import { useState } from "react";
 import {Link} from 'react-router-dom'
 import ToggleState from "../hooks/ToggleState";
 import axios from "axios";
+
+
 const Signup = () => {
   const [error, setError] = useState("");
   const [successMessage, setSuccessMessage] = ToggleState();
+  const [showPass, setShowPass] = ToggleState();
 
   const onSubmit = async (values, { resetForm }) => {
     try {
@@ -51,6 +55,7 @@ const Signup = () => {
     initialValues: {
       username: "",
       password: "",
+      confirmPassword: "",
     },
     validationSchema: signupSchema,
     onSubmit,
@@ -124,7 +129,7 @@ const Signup = () => {
               <legend className="text-lg tracking-wide">Password</legend>
               <input
                 className="p-3 w-full  outline-none"
-                type="password"
+                type={showPass ? 'text' : 'password'}
                 name="password"
                 id="password"
                 value={values.password}
@@ -132,11 +137,56 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
-                <AiFillLock className="text-custom-yellow text-2xl " />
+              {showPass ? (
+                  <GiAllSeeingEye
+                    className="text-custom-yellow text-4xl cursor-pointer "
+                    onClick={() => setShowPass((preval) => !preval)}
+                  />
+                ) : (
+                  <AiFillEyeInvisible
+                    className="text-custom-yellow text-4xl cursor-pointer "
+                    onClick={() => setShowPass((preval) => !preval)}
+                  />
+                )}
               </div>
             </fieldset>
             {errors.password && touched.password && (
               <p className="font-bold text-red-500">{errors.password}</p>
+            )}
+            <fieldset
+              className={
+                errors.password && touched.password
+                  ? "border-2 text-start border-red-500 w-full ps-2 pb-1 rounded-md relative"
+                  : "border-2 text-start border-[#c6b6fb]  w-full ps-2 pb-1 rounded-md relative"
+              }
+            >
+
+            <legend className="text-lg tracking-wide">Confirm Password</legend>
+              <input
+                className="p-3 w-full  outline-none"
+                type={showPass ? 'text' : 'password'}
+                name="confirmPassword"
+                id="password"
+                value={values.confirmPassword}
+                onBlur={handleBlur}
+                onChange={handleChange}
+              />
+              <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
+              {showPass ? (
+                  <GiAllSeeingEye
+                    className="text-custom-yellow text-4xl cursor-pointer "
+                    onClick={() => setShowPass((preval) => !preval)}
+                  />
+                ) : (
+                  <AiFillEyeInvisible
+                    className="text-custom-yellow text-4xl cursor-pointer "
+                    onClick={() => setShowPass((preval) => !preval)}
+                  />
+                )}
+              </div>
+            </fieldset>
+            {errors.confirmPassword && touched.confirmPassword && (
+              <p className="font-bold text-red-500">{errors.confirmPassword}</p>
             )}
 
             {error && (
