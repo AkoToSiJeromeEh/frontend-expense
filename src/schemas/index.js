@@ -30,18 +30,28 @@ export const loginSchema = yup.object().shape({
 });
 
 export const signupSchema = yup.object().shape({
-		
-	username: yup.string()
-    .required("Required")
-    .max(25, 'Username must be at most 25 characters')
-    .min(4, 'Username must be at least 4 characters'),
-	password: yup.string()
-    .required("Required")
-    .max(25)
-    .min(4, 'Password must be at least 4 characters')
-    .matches(passwordMatcher, "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character")
-
+  username: yup.string()
+      .required("Required")
+      .max(25, 'Username must be at most 25 characters')
+      .min(4, 'Username must be at least 4 characters'),
+  password: yup.string()
+      .required("Required")
+      .max(25)
+      .min(4, 'Password must be at least 4 characters')
+      .matches(
+          passwordMatcher,
+          "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
+      ),
+  confirmPassword: yup.string().required("Required")
+      .max(25)
+      .min(4, 'Password must be at least 4 characters')
+      .oneOf([yup.ref('password')], 'Passwords must match')
+      .matches(
+          passwordMatcher,
+          "Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character"
+      ),
 })
+
 
 export const incomeSchema = yup.object().shape({
     
