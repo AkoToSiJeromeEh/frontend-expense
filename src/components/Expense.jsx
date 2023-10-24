@@ -15,17 +15,17 @@ import {RiDeleteBin6Fill} from 'react-icons/ri'
 	<div className="bg-[#00000016]  rounded-t-xl w-full p-5 flex flex-row justify-between items-center h-fit gap-4 relative ">
 	<div>
 	  <div className="rgb-add rounded-full p-3 w-12 inline-block align-middle ">
-	  {		  category == "Food" ? (
+	  {		  category == " Food" ? (
               <FaHamburger className="w-10 text-2xl" />
-            ) : category == "Travel" ? (
+            ) : category == " Travel" ? (
               <PiAirplaneTiltFill className="w-10 text-2xl" />
-            ) : category == "School" ? (
+            ) : category == " School" ? (
               <FaSchool className="w-10 text-2xl" />
-            ) : category == "Home" ? (
+            ) : category == " Home" ? (
               <HiMiniHomeModern className="w-10 text-2xl" />
             ) : category == "Bills" ? (
               <FaMoneyBill className="w-10 text-2xl" />
-            ) : category == "Entertainment" ? (
+            ) : category == " Entertainment" ? (
               <BiSolidCameraMovie className="w-10 text-2xl" />
             ) : (
               ""
