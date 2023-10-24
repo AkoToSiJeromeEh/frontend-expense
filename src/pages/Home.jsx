@@ -52,7 +52,7 @@ const Home = () => {
             ) : expense.category == " Entertainment" ? (
               <BiSolidCameraMovie className="w-10 text-2xl" />
             ) : (
-              ""
+             <img className="w-10" src={cardImage} alt="" />
             )}
           </div>
           <div className="inline-block align-middle ms-2">
