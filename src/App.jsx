@@ -29,6 +29,7 @@ function App() {
           <Route index element={<Landing />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+                  <Route path="*" element={<PageNotFound/>} />
         </Route>
         <Route element={<PrivateRoutes/>}>
         <Route path="home"    element={<HomeLayout />}>
@@ -38,9 +39,10 @@ function App() {
           <Route path="expenseList"  element={<ExpenseList />} />
           <Route path='expenseList/update/:id'  element={<UpdateReminder/>} />
           <Route path="about" element={<About />} />
+          <Route path="*" element={<PageNotFound/>} />
         </Route>
+      
         </Route>
-        <Route path="*" element={<PageNotFound/>} />
       </Routes>
     </NavigationWrapper>
     </QueryClientProvider>
