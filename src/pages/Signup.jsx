@@ -1,5 +1,5 @@
 import { AiFillEyeInvisible } from "react-icons/ai";
-import { IoMdEye } from "react-icons/gi";
+import { IoMdEye } from "react-icons/io";
 import { FaUserLarge } from "react-icons/fa6";
 import { signupSchema } from "../schemas";
 import { useFormik } from "formik";
