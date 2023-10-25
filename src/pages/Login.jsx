@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillEyeInvisible } from "react-icons/ai";
-import { IoMdEye } from "react-icons/gi";
+import { IoMdEye } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { useFormik } from "formik";
 import { loginSchema } from "../schemas";
