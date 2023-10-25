@@ -74,7 +74,7 @@ const ExpenseStat = () => {
               <div>
                 <h2 className="text-2xl font-semibold text-white ">Top Spending</h2>
               </div>
-              <div className="grid grid-cols-1 gap-4 h-[15vh] lg:w-full md:m-auto md:h-[25vh] w-full overflow-y-auto place-content-start">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[15vh] lg:w-full md:m-auto md:h-[25vh] w-full overflow-y-auto place-content-start">
                 {
                   expensesData?.data.map((expenses) => {
                       
