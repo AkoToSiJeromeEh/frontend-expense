@@ -1,5 +1,5 @@
 import { AiFillEyeInvisible } from "react-icons/ai";
-import { GiAllSeeingEye } from "react-icons/gi";
+import { IoMdEye } from "react-icons/gi";
 import { FaUserLarge } from "react-icons/fa6";
 import { signupSchema } from "../schemas";
 import { useFormik } from "formik";
@@ -138,7 +138,7 @@ const Signup = () => {
               />
               <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
               {showPass ? (
-                  <GiAllSeeingEye
+                  <IoMdEye
                     className="text-custom-yellow text-4xl cursor-pointer "
                     onClick={() => setShowPass((preval) => !preval)}
                   />
@@ -173,7 +173,7 @@ const Signup = () => {
               />
               <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
               {showPass ? (
-                  <GiAllSeeingEye
+                  <IoMdEye
                     className="text-custom-yellow text-4xl cursor-pointer "
                     onClick={() => setShowPass((preval) => !preval)}
                   />
