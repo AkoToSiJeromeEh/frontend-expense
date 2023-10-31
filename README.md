@@ -8,19 +8,47 @@
 
 [https://expensetracker-36xy.onrender.com/](https://expensetracker-36xy.onrender.com/)
 
-<h2>Project Screenshots:</h2>
-
-<h3>💻<b>Landing Page</b></h3>
 
 
-<h1>💻<b>Login Page</b></h3>
+<h1>❇️<b>LANDING PAGE</b></h3>
 
-<img alt="my-image" align="right" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/07153e5d-6290-439e-b764-c792bbe0b484">
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/7a341f50-2495-416d-b7a9-df3d8f40f258">
 
-<h3>💻<b>Signup Page</b></h3>
+<h1>✨<b>LOGIN PAGE</b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/97b628d9-70c4-4f5d-9925-e7500da3c23c">
+
+<h1>❇️<b>SIGN UP PAGE</b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/31bfa5bf-356c-4975-acc8-086dc3d775f4">
+
+<h1>✨<b>HOME PAGE</b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/07153e5d-6290-439e-b764-c792bbe0b484">
+
+<h1>❇️<b>HOME PAGE MOBILE</b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/8dad6440-02ec-4e03-8395-e3c115fc416a">
+
+<h1>✨<b>EXPENSE STATISTICS PAGE </b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/aba4ddb6-f32b-408a-9c89-ad490d3a498d">
+
+<h1>❇️<b>LIST EXPENSE | REMINDERS PAGE </b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/cdc1a8a2-ee7f-4c74-873b-496ec37dff65">
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/45e905b3-bfb4-4ab0-bdf0-097cdc2ed096">
+
+<h1>✨<b>ADD EXPENSES | REMINDERS | INCOME PAGE </b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/b5d06c6e-0ebd-4a09-a1ba-e66a8190c9ae">
+
+<h1>❇️<b>ABOUT PAGE </b></h1>
+
+<img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/a8f27bd0-40bf-4300-84de-30bcc727ea94">
 
 
-  
   
 <h2>🧐 Features</h2>
 
@@ -33,3 +61,21 @@ Here're some of the project's best features:
 *   Complete Route Implementation using React Router
 *   Mobile First Principle (Responsive 90%)
 *   Complete Validation Schema on Input fields
+
+
+
+  
+<h2>💻 Developmenmt</h2>
+
+Here're some of the tools and stack use and development span:
+
+*  🖱️ We use Mern Stack ( React ▶️ Frontend , Express ▶️ Backend , MONNGO DB ▶️ DATABASE , NODE ▶️ RUNTIME ENV )
+*  🖱️ Yup For all input fields and forms schema
+*  🖱️ Formik For Creating Form
+*  🖱️ React Query for Fetching Data
+*  🖱️ Axios for http request
+*  🖱️ Chart.js for Interactive Chart
+*  🖱️ animate.css for animation
+*  🖱️ React Router for Managing and Creating Routes
+*  ✨ My Expense Tracker is a rush project, so I haven't refactored any of the code. I worked on the project for two weeks with no planning, just coding. I'm grateful for my experience on my previous simple project, which helped me a lot and since it is my first mern stack project i am happy when im presenting it on my class .
+*  ✨ I will continue this Project when Our capstone is Done because there is a lot of things need to change in this web app i created Thanksss
