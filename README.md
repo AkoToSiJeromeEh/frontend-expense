@@ -10,7 +10,17 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="" alt="project-screenshot" width="400" height="400/">
+<h3>💻<b>Landing Page</b></h3>
+![Screenshot 2023-10-31 210716](https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/edf8cc21-d428-479f-a52e-9ae3f8c2c679)
+
+
+<h3>💻<b>Login Page</b></h3>
+![LoginE2](https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/edfc3619-3974-4a22-99d0-277daf04ff73)
+
+
+<h3>💻<b>Signup Page</b></h3>
+![SignUp1](https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/a5215245-730c-4cdd-a371-82197858dec7)
+
 
   
   
