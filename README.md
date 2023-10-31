@@ -15,7 +15,7 @@
 
 
 <h1>💻<b>Login Page</b></h3>
-<img src="https://raw.githubusercontent.com/AkoToSiJeromeEh/frontend-expense/main/assets/114987334/edf8cc21-d428-479f-a52e-9ae3f8c2c679.png" alt="Landing Page Screenshot">
+<img src="![Screenshot 2023-10-31 210716](https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/edf8cc21-d428-479f-a52e-9ae3f8c2c679)" alt="Landing Page Screenshot">
 
 
 
