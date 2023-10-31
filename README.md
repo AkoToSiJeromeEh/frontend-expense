@@ -1,4 +1,4 @@
-h1 align="center" id="title">Expense Tracker V2</h1>
+<h1 align="center" id="title">Expense Tracker V2</h1>
 
 <p align="center"><img src="https://socialify.git.ci/AkoToSiJeromeEh/frontend-expense/image?description=1&amp;descriptionEditable=%0A%20Expense%20Tracker%3A%20Add%2C%20delete%2C%20and%20update%20expenses%20with%20interactive%20components%2C%20track%20expenses%20by%20category%2C%20date%2C%20and%20amount%2C%20view%20detailed%20reports%20on%20spending%20habits%2C%20and%20get%20insights%20into%20your%20spending%20with%20interactive%20charts%20and%20graphs&amp;font=Raleway&amp;issues=1&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;theme=Auto" alt="project-image"></p>
 
