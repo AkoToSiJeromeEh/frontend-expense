@@ -15,7 +15,8 @@
 
 
 <h1>💻<b>Login Page</b></h3>
-<img src"https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/edfc3619-3974-4a22-99d0-277daf04ff73" align="center" />
+<img src="https://raw.githubusercontent.com/AkoToSiJeromeEh/frontend-expense/main/assets/114987334/edf8cc21-d428-479f-a52e-9ae3f8c2c679.png" alt="Landing Page Screenshot">
+
 
 
 <h3>💻<b>Signup Page</b></h3>
