@@ -38,6 +38,8 @@
 
 <img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/cdc1a8a2-ee7f-4c74-873b-496ec37dff65">
 
+
+
 <img alt="my-image" align="center" src="https://github.com/AkoToSiJeromeEh/frontend-expense/assets/114987334/45e905b3-bfb4-4ab0-bdf0-097cdc2ed096">
 
 <h1>✨<b>ADD EXPENSES | REMINDERS | INCOME PAGE </b></h1>
@@ -69,7 +71,7 @@ Here're some of the project's best features:
 
 Here're some of the tools and stack use and development span:
 
-*  🖱️ We use Mern Stack ( React ▶️ Frontend , Express ▶️ Backend , MONNGO DB ▶️ DATABASE , NODE ▶️ RUNTIME ENV )
+*  🖱️ We use Mern Stack ( React ▶️ Frontend , Express ▶️ Backend , MONGO DB ▶️ DATABASE , NODE ▶️ RUNTIME ENV )
 *  🖱️ Yup For all input fields and forms schema
 *  🖱️ Formik For Creating Form
 *  🖱️ React Query for Fetching Data
