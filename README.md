@@ -81,3 +81,7 @@ Here're some of the tools and stack use and development span:
 *  🖱️ React Router for Managing and Creating Routes
 *  ✨ My Expense Tracker is a rush project, so I haven't refactored any of the code. I worked on the project for two weeks with no planning, just coding. I'm grateful for my experience on my previous simple project, which helped me a lot and since it is my first mern stack project i am happy when im presenting it on my class .
 *  ✨ I will continue this Project when Our capstone is Done because there is a lot of things need to change in this web app i created Thanksss
+
+
+<h2>🐛 There is Minor Bugs In This Project</h2>
+*  ✨ I will update the latest code once i figured it out who causing those bugs i think it could take longer since i have more important things to do 
