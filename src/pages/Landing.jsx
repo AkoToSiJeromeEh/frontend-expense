@@ -32,7 +32,7 @@ const Landing = () => {
             <h1 className=" text-4xl md:text-6xl leading-[3rem] tracking-wider mb-2">
               EXPENSE
             </h1>
-            <h1 className="md:text-6xl leading-[3rem] tracking-wider text-4xl">TRACKER</h1>
+            <h1 className="md:text-6xl leading-[3rem] tracking-wider text-4xl text-blue-400">TRACKER</h1>
           </div>
           <div className="md:text-center">
             <p className="w-full md:text-2xl md:w-3/5 m-auto  md:leading-9 font-thin">

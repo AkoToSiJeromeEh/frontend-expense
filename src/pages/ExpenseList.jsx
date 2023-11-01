@@ -1,5 +1,5 @@
 import Axios from "axios";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaRegLightbulb } from "react-icons/fa";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import RemindList from "../components/RemindList";
@@ -7,31 +7,38 @@ import ToggleState from "../hooks/ToggleState";
 import {useExpenses , useReminder} from '../functions'
 import Expense from "../components/Expense";
 import Successmess from '../components/Sucessmess'
+import { useAuth } from '../hooks/auth/auth';
 
 
 const ExpenseList = () => {
+
+
   const [reminderDelete, setReminderDelete] = ToggleState();
   const [expenseDelete, setExpenseDelete] = ToggleState();
-
+  const {token } = useAuth()
   const {
     expensesData,
     refetchExpenses,
+    isExpensesLoading
   } = useExpenses();
 
-  console.log(expensesData);
+
 
   const {
     remindersData,
+    isRemindersLoading,
     refetchReminders,
   } = useReminder();
 
-  console.log(remindersData);
+
 
   const totalExpenses = expensesData?.data.reduce((totalexpense, expense) => totalexpense + expense.expense, 0)
 
   const deleteReminderList = async (id) => {
     await Axios.delete(
-      `https://expensetracker-api-yy05.onrender.com/api/reminders/deleteReminder/${id}`
+      `"https://expensetracker-api-yy05.onrender/api/reminders/deleteReminder/${id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }
     );
     setReminderDelete(true);
     setTimeout(() => {
@@ -42,7 +49,9 @@ const ExpenseList = () => {
 
   const deleteExpenseList = async (id) => {
     await Axios.delete(
-      `https://expensetracker-api-yy05.onrender.com/api/expenses/deleteExpense/${id}`
+      `"https://expensetracker-api-yy05.onrender/api/expenses/deleteExpense/${id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      }
     );
     setExpenseDelete(true);
     refetchExpenses();
@@ -79,7 +88,7 @@ const ExpenseList = () => {
                 </h2>
 
                 <div className="grid grid-cols-1 overflow-y-scroll h-[50vh] md:grid-cols-2 gap-20">
-                  {expensesData?.data.map((expense) => {
+               {isExpensesLoading ? 'Loading...' :    expensesData?.data.map((expense) => {
                     return (
                       <div key={expense._id}>
                         <Expense
@@ -108,7 +117,8 @@ const ExpenseList = () => {
               </div>
 
               <div className="c-card rounded-xl p-5 grid grid-flow-dense lg:grid-cols-3 gap-5 md:grid-cols-2 grid-cols-1 h-[50vh] overflow-y-scroll">
-                {remindersData?.data.map((reminder) => {
+               {
+                isRemindersLoading ? 'Loading...' :   remindersData?.data.map((reminder) => {
                   return (
                     <div key={reminder._id}>
                       <RemindList
@@ -122,7 +132,8 @@ const ExpenseList = () => {
                     </div>
                     
                   );
-                })}
+                })
+               }
               </div>
             </div>
           </main>

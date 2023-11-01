@@ -8,14 +8,18 @@ import { BsCalendar2Date } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 import ToggleState from "../hooks/ToggleState";
 import Sucessmess from "./Sucessmess";
+import { useAuth } from '../hooks/auth/auth';
 const UpdateReminder = () => {
   const params = useParams();
   const [showSucess, setShowSucess] = ToggleState();
+  const {token} = useAuth()
 
   const onSubmit = async (values, { resetForm }) => {
     const response = await Axios.patch(
-      `https://expensetracker-api-yy05.onrender.com/api/reminders/updateReminder/${params.id}`,
-      values
+      `"https://expensetracker-api-yy05.onrender/api/reminders/updateReminder/${params.id}`,
+      values, {
+        headers: { Authorization: `Bearer ${token}` }
+      }
     );
     setShowSucess(false);
     setTimeout(() => {

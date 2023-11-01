@@ -5,12 +5,18 @@ import {expenseSchema} from '../schemas'
 import Sucessmess from './Sucessmess';
 import ToggleState from '../hooks/ToggleState';
 import  axios  from "axios";
+import { useAuth } from '../hooks/auth/auth';
 const Addexpense = () => {
   
   const [sucessExpense , setSucessExpense] = ToggleState()
 
+  const {token} = useAuth()
+
   const onSubmit = async(values , {resetForm}) => {
-     const response = await axios.post('https://expensetracker-api-yy05.onrender.com/api/expenses/createExpense' , values)
+    const response = await axios.post('https://expensetracker-api-yy05.onrender/api/expenses/createExpense', values, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    
      setSucessExpense(true)
      setTimeout(() => {
        resetForm()

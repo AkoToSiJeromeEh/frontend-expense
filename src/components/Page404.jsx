@@ -8,7 +8,7 @@ export const Page404 = () => {
         <FaRedditAlien className='text-5xl text-custom-yellow' />
         <p className='font-semibold text-4xl'>404 Page Not Found!</p>
         <Link to='/' className='rgb-add p-5 w-96 rounded-md font-bold'>
-          Back to Home
+          Back To Home
         </Link>
       </div>
     </div>

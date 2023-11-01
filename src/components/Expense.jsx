@@ -6,7 +6,6 @@ import { BiSolidCameraMovie } from "react-icons/bi";
 import { HiMiniHomeModern } from "react-icons/hi2";
 import { FaMoneyBill } from "react-icons/fa";
 import {RiDeleteBin6Fill} from 'react-icons/ri'
-import cardImage from "../images/Rectangle 2.png";
 
  const Expense = (props) => {
 
@@ -29,7 +28,7 @@ import cardImage from "../images/Rectangle 2.png";
             ) : category == "Entertainment" ? (
               <BiSolidCameraMovie className="w-10 text-2xl" />
             ) : (
-              <img className="w-10" src={cardImage} />
+              ""
             )}
 	  </div>
 	  <div className="inline-block align-middle ms-2">

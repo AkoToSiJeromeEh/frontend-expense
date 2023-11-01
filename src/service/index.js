@@ -1,16 +1,21 @@
-import Axios from "axios";
+import axios from "axios";
+const token = localStorage.getItem("accessToken");
 const fetchExpenseList = () => {
-    return Axios.get("https://expensetracker-api-yy05.onrender.com/api/expenses/expenses");
+  return axios.get("https://expensetracker-api-yy05.onrender/api/expenses/expenses", {
+    headers: { Authorization: `Bearer ${token ? token : null}` }
+  });
 };
 
 const fetchReminderList = () => {
-    return Axios.get("https://expensetracker-api-yy05.onrender.com/api/reminders");
+  return axios.get("https://expensetracker-api-yy05.onrender/api/reminders", {
+    headers: { Authorization: `Bearer ${token ? token : null}` }
+  });
 };
 
 const fetchIncome = () => {
+  return axios.get("https://expensetracker-api-yy05.onrender/api/incomes", {
+    headers: { Authorization: `Bearer ${token ? token : null}` }
+  });
+};
 
-     return Axios.get("https://expensetracker-api-yy05.onrender.com/api/incomes")
-}
-
-
-export {fetchExpenseList , fetchReminderList , fetchIncome  }
+export { fetchExpenseList, fetchReminderList, fetchIncome };

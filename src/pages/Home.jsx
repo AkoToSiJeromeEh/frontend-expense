@@ -8,7 +8,7 @@ import { PiAirplaneTiltFill } from "react-icons/pi";
 import { BiSolidCameraMovie } from "react-icons/bi";
 import { HiMiniHomeModern } from "react-icons/hi2";
 import { FaMoneyBill } from "react-icons/fa";
-import { useState } from "react";
+import {  useState } from "react";
 import Chart from "../components/Chart";
 import { useAuth } from "../hooks/auth/auth";
 import ToggleState  from "../hooks/ToggleState"
@@ -20,9 +20,9 @@ import {
 } from "../functions";
 const Home = () => {
 
-  const {username , logout , isLogin} = useAuth()
-  const { expensesData } = useExpenses();
-  const incomeData = useIncome();
+  const {username , logout , isLogin } = useAuth()
+  const { expensesData  } = useExpenses();
+  const {incomeData } = useIncome();
   const [isOpen , setOpen] = ToggleState()
 
 
@@ -49,10 +49,10 @@ const Home = () => {
               <HiMiniHomeModern className="w-10 text-2xl" />
             ) : expense.category == "Bills" ? (
               <FaMoneyBill className="w-10 text-2xl" />
-            ) : expense.category == "Entertainment" ? (
+            ) : expense.category == " Entertainment" ? (
               <BiSolidCameraMovie className="w-10 text-2xl" />
             ) : (
-             <img className="w-10" src={cardImage} alt="" />
+              ""
             )}
           </div>
           <div className="inline-block align-middle ms-2">

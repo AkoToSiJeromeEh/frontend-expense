@@ -6,17 +6,20 @@ import { TfiWrite } from "react-icons/tfi";
 import  axios  from "axios";
 import ToggleState from "../hooks/ToggleState";
 import Sucessmess from './Sucessmess'
-
+import { useAuth } from '../hooks/auth/auth';
 
 const Addreminder = () => {
   const [showSuccessText , setShowSuccessText] = ToggleState()
+  const {token} = useAuth()
   const onSubmit = async(values , {resetForm} ) => {
-    const response = await axios.post('https://expensetracker-api-yy05.onrender.com/api/reminders/createReminder' , values);
+    const response = await axios.post('https://expensetracker-api-yy05.onrender/api/reminders/createReminder' , values , {
+      headers: { Authorization: `Bearer ${token}` }
+    });
     setShowSuccessText(true)
     setTimeout(() => {
       resetForm();
       setShowSuccessText(false)
-    }, 5000);
+    }, 3000);
     console.log("submitted");
     console.log(response)
 

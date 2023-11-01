@@ -3,12 +3,14 @@ import { Outlet, Navigate } from 'react-router-dom';
 import { useAuth } from '../auth/auth';
 const PrivateRoutes = () => {
 
-   const {username} = useAuth()
+   const {username , token} = useAuth()
+   
 
-  return !username ? (
-     <Navigate to="/login" /> 
-  ) : (
+  return username && token ? (
     <Outlet />  
+  ) : (
+    
+    <Navigate to="/" /> 
   );
 };
 

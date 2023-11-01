@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import { PiPercentLight } from 'react-icons/pi'
 import Card from '../components/Card';
 import { useExpenses, useIncome, totalExpenses, totalIncome } from "../functions";
-
 const ExpenseStat = () => {
 
-  const { expensesData } = useExpenses();
-  const incomeData = useIncome();
+  const { expensesData  } = useExpenses();
+  const {incomeData } = useIncome();
+
+
+
 
   let totalExpense = totalExpenses(expensesData)
   let totalIncomes = totalIncome(incomeData)

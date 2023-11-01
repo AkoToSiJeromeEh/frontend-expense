@@ -1,36 +1,41 @@
-import React from "react";
-import { AiFillEyeInvisible } from "react-icons/ai";
-import { IoMdEye } from "react-icons/io";
-import { FaUser } from "react-icons/fa";
+import {  useState } from "react";
 import { useFormik } from "formik";
 import { loginSchema } from "../schemas";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/auth/auth";
-import { useState } from "react";
-import ToggleState from "../hooks/ToggleState";
+import { FaUser } from "react-icons/fa";
+import { GiAllSeeingEye } from "react-icons/gi";
+import { AiFillEyeInvisible } from "react-icons/ai";
+import { useExpenses , useReminder , useIncome } from "../functions";
+
 const Login = () => {
   const navigate = useNavigate();
-  const [error, setError] = useState();
   const { login } = useAuth();
 
-  const [showPass, setShowPass] = ToggleState();
+  const [showPass, setShowPass] = useState(false);
+  const [error, setError] = useState("");
+  const {refetchExpenses } = useExpenses();
+  const {refetchReminders } = useReminder();
+  const {refetchIncome} = useIncome();
+
+  const handleRefetch = () => {
+    refetchExpenses()
+    refetchReminders()
+    refetchIncome();
+  }
 
   const onSubmit = async (values) => {
     try {
-      const response = await axios.post(
-        "https://expensetracker-api-yy05.onrender.com/api/users/login",
-        values
-      );
-      login(values.username);
-      console.log(response);
+      const response = await axios.post("https://expensetracker-api-yy05.onrender/api/users/login", values);
+      login(values.username, response.data.accessToken);
       navigate("/home");
     } catch (error) {
       setError(error.response.data.msg);
-      console.error("Error:", error);
     }
   };
+
 
   const {
     values,
@@ -49,12 +54,13 @@ const Login = () => {
     onSubmit,
   });
 
+
   return (
-    <main className="login-container-main min-h-screen text-white grid grid-cols-1 place-content-around md:grid-cols-2 md:place-content-start md:gap-6 overflow-hidden ">
-      <div className=" backdrop-blur-md h-[100vh] hidden md:block p-8 bg-[#0000003f]">
+    <main className="login-container-main min-h-screen text-white grid grid-cols-1 place-content-around md:grid-cols-2 md:place-content-start md:gap-6 overflow-hidden">
+      <div className="backdrop-blur-md h-[100vh] hidden md:block p-8 bg-[#0000003f]">
         <h2 className="text-4xl text-custom-yellow">Login Now</h2>
       </div>
-      <div className="flex flex-col md:bg-[#0000003f] backdrop-blur-md  text-white justify-around p-8 md:relative md:-left-36 gap-10 md:gap-0 login-cont">
+      <div className="flex flex-col md:bg-[#0000003f] backdrop-blur-md text-white justify-around p-8 md:relative md:-left-36 gap-10 md:gap-0 login-cont">
         <div>
           <h1 className="expense text-[1.5rem] leading-[1rem] tracking-wider md:text-4xl">
             EXPENSE
@@ -66,13 +72,12 @@ const Login = () => {
             Welcome To Expense Tracker
           </p>
           <p>
-            Don&apos;t have an account ?{" "}
+            Don't have an account ?{" "}
             <Link to="/signup">
               <strong>Create Now</strong>
             </Link>
           </p>
         </div>
-
         <div>
           <form
             onSubmit={handleSubmit}
@@ -97,15 +102,15 @@ const Login = () => {
                 name="username"
                 id="username"
               />
-              <div className="absolute right-0 p-5  -top-3 rounded-sm h-16">
+              <div className="absolute right-0 p-5 -top-3 rounded-sm h-16">
                 <FaUser className="text-custom-yellow text-2xl" />
               </div>
             </fieldset>
-            <p>
+            <div>
               {errors.username && touched.username && (
-                <p className="font-bold text-red-500">{errors.username}</p>
+                <div className="font-bold text-red-500">{errors.username}</div>
               )}
-            </p>
+            </div>
             <fieldset
               className={
                 errors.password && touched.password
@@ -123,34 +128,33 @@ const Login = () => {
                 value={values.password}
                 id="password"
               />
-              <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
+              <div className="absolute right-0 p-5 -top-3 rounded-sm h-16">
                 {showPass ? (
-                  <IoMdEye
-                    className="text-custom-yellow text-4xl cursor-pointer "
-                    onClick={() => setShowPass((preval) => !preval)}
+                  <GiAllSeeingEye
+                    className="text-custom-yellow text-4xl cursor-pointer"
+                    onClick={() => setShowPass((prev) => !prev)}
                   />
                 ) : (
                   <AiFillEyeInvisible
-                    className="text-custom-yellow text-4xl cursor-pointer "
-                    onClick={() => setShowPass((preval) => !preval)}
+                    className="text-custom-yellow text-4xl cursor-pointer"
+                    onClick={() => setShowPass((prev) => !prev)}
                   />
                 )}
               </div>
             </fieldset>
-            <p>
+            <div>
               {errors.password && touched.password && (
-                <p className="font-bold text-red-500">{errors.password}</p>
+                <div className="font-bold text-red-500">{errors.password}</div>
               )}
-            </p>
-
-            <p className="text-md text-red-500 font-bold w-full text-center">
+            </div>
+            <div className="text-md text-red-500 font-bold w-full text-center">
               {error}
-            </p>
-
+            </div>
             <button
               className="add-linear-bg-3 p-5 rounded-md w-full"
               type="submit"
               disabled={isSubmitting}
+              onClick={() => handleRefetch()}
             >
               Login
             </button>
@@ -162,9 +166,9 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="absolute  right-0 w-40 h-screen bg-[#141326] text-black hidden md:block m-auto">
+      <div className="absolute right-0 w-40 h-screen bg-[#141326] text-black hidden md:block m-auto">
         <div className="text-center flex items-center justify-center h-full">
-          <p className="rotate-90 text-lg text-custom-yellow cursor-pointer ">
+          <p className="rotate-90 text-lg text-custom-yellow cursor-pointer">
             Forgot Password ?{" "}
             <strong className="text-white">Reset For Free</strong>
           </p>

@@ -1,5 +1,5 @@
 import { AiFillEyeInvisible } from "react-icons/ai";
-import { IoMdEye } from "react-icons/io";
+import { GiAllSeeingEye } from "react-icons/gi";
 import { FaUserLarge } from "react-icons/fa6";
 import { signupSchema } from "../schemas";
 import { useFormik } from "formik";
@@ -18,7 +18,7 @@ const Signup = () => {
   const onSubmit = async (values, { resetForm }) => {
     try {
       const response = await axios.post(
-        "https://expensetracker-api-yy05.onrender.com/api/users/register",
+        "https://expensetracker-api-yy05.onrender/api/users/register",
         values
       );
       setTimeout(() => {
@@ -138,7 +138,7 @@ const Signup = () => {
               />
               <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
               {showPass ? (
-                  <IoMdEye
+                  <GiAllSeeingEye
                     className="text-custom-yellow text-4xl cursor-pointer "
                     onClick={() => setShowPass((preval) => !preval)}
                   />
@@ -173,7 +173,7 @@ const Signup = () => {
               />
               <div className="absolute right-0 p-5 -top-3 rounded-sm h-16  ">
               {showPass ? (
-                  <IoMdEye
+                  <GiAllSeeingEye
                     className="text-custom-yellow text-4xl cursor-pointer "
                     onClick={() => setShowPass((preval) => !preval)}
                   />

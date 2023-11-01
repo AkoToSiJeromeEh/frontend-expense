@@ -1,49 +1,45 @@
 import { useQuery } from "react-query";
 import { fetchExpenseList , fetchReminderList , fetchIncome } from '../service';
 
-
-
-
 const useExpenses = () => {
-  const {
-    data: expensesData,
-    isLoading: isExpensesLoading,
-    isFetching: isExpensesFetching,
-    refetch: refetchExpenses,
-  } = useQuery("expenses", fetchExpenseList, {
-    cacheTime: 5000,
-    staleTime: 30000,
-  });
+	const {
+	  data: expensesData,
+	  isLoading: isExpensesLoading,
+	  isFetching: isExpensesFetching,
+	  refetch: refetchExpenses,
+	} = useQuery(["expenses"], fetchExpenseList, {
+		
+	});
+
+	
+	return { expensesData, isExpensesFetching, refetchExpenses, isExpensesLoading };
+  };
   
-  return { expensesData, isExpensesFetching, refetchExpenses, isExpensesLoading };
-};
-
-const useReminder = () => {
-
+  const useReminder = () => {
 	const {
-		isLoading: isRemindersLoading,
-		data: remindersData,
-		isFetching: isRemindersFetching,
-		refetch: refetchReminders,
-	  } = useQuery("reminders", fetchReminderList, {
-		cacheTime: 5000,
-		staleTime: 30000,
-	  });
+	  isLoading: isRemindersLoading,
+	  data: remindersData,
+	  isFetching: isRemindersFetching,
+	  refetch: refetchReminders,
+	} = useQuery(["reminders"], fetchReminderList, {
 
-	  return {remindersData , isRemindersFetching , refetchReminders , isRemindersLoading}
+	});
 
-}
-
-const useIncome = () => {
+	return {remindersData , isRemindersFetching , refetchReminders , isRemindersLoading}
+  }
+  
+  const useIncome = () => {
 	const {
-		data: incomeData,
-	  } = useQuery("incomes", fetchIncome, {
-		cacheTime: 5000,
-		staleTime: 30000,
-	  });
+	  data: incomeData,
+	  refetch: refetchIncome
+	} = useQuery(["incomes"], fetchIncome, {
 
-	  return incomeData  
-}
+	});
+
+  
+	return {incomeData , refetchIncome}  
+  }
+  
 
 
 

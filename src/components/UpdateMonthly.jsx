@@ -4,11 +4,14 @@ import {incomeSchema} from '../schemas'
 import ToggleState from '../hooks/ToggleState';
 import  axios  from "axios";
 import Sucessmess from './Sucessmess'
+import { useAuth } from '../hooks/auth/auth';
 const UpdateMonthly = () => {
 	const [sucessIncome , setsucessIncome] = ToggleState()
-
+  const {token} = useAuth()
   const onSubmit = async(values , {resetForm}) => {
-     const response = await axios.post('https://expensetracker-api-yy05.onrender.com/api/incomes/updateIncome' , values)
+     const response = await axios.post('"https://expensetracker-api-yy05.onrender/api/incomes/updateIncome' , values, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
      setsucessIncome(true)
      setTimeout(() => {
        resetForm()

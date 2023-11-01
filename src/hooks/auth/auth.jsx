@@ -1,44 +1,46 @@
-import React, { useState, createContext, useContext, useMemo } from "react";
-import { redirect } from "react-router-dom";
-import ToggleState from "../ToggleState";
+import { useState, createContext, useContext, useMemo } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [username, setUsername] = useState();
-  const [isLogin, setLogin] = ToggleState();
-
-
-  const login = (username) => {
+  const storedUsername = localStorage.getItem("username");
+  const storedToken = localStorage.getItem("accessToken");
+  const [username, setUsername] = useState(storedUsername || null);
+  const [token, setToken] = useState(storedToken || null);
+  const [isLogin, setIsLogin] = useState(false); 
+  const login = async (username, token) => {
     setUsername(username);
-    setLogin(true);
+    setToken(token);
+    localStorage.setItem("username", username);
+    localStorage.setItem("accessToken", token);
+    setIsLogin(true); 
     setTimeout(() => {
-      setLogin(false);
-      redirect("/home");
+      setIsLogin(false); 
     }, 3000);
   };
 
   const logout = () => {
     setUsername(null);
+    setToken(null);
+    console.log("Logging out");
+    localStorage.removeItem("username");
+    localStorage.removeItem("accessToken");
+    setIsLogin(false); 
   };
 
   const contextValue = useMemo(
     () => ({
       username,
-      isLogin,
+      token,
+      isLogin, 
       login,
       logout,
     }),
-    [username, isLogin]
+    [username, token, isLogin]
   );
 
-  return (
-    <AuthContext.Provider value={contextValue}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
 };
-
 export const useAuth = () => {
   return useContext(AuthContext);
 };
